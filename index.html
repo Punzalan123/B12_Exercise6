@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6</title>
+    <style>
+        .calc {
+            width: 500px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+        <form action="" class="calc">
+            <h1>Speed conversions</h1>
+            <label for="speed">Meter/second (m/s)</label><br>
+            <input type="number" name="speed" id="speed" placeholder="Enter Speed in m/s" size="40">
+            <select name="" id="conversions">
+                <option value="" selected disabled>Select Speed Unit</option>
+                <option value="3.6">Kilometer/hour (kph)</option>
+                <option value="2.236936">Mile/hour (mph)</option>
+                <option value="0.001">Kilometer/second (km/s)</option>
+                <option value="39.370079">Inch/second (in/s)</option>
+                <option value="0.0029386">Mach (Ma)</option>
+            </select>
+            <!-- <br><button onclick="convertspeed()">Convert</button> -->
+            
+        </form>
+        <br>
+        <div class="calc">
+            <button onclick="convertspeed()">Convert</button>
+            <h2 id="answer"></h2>
+        </div>
+    <script>
+        function convertspeed() {
+            let ms = document.getElementById("speed").value;
+            let con = document.getElementById("conversions").value;
+            let ans = parseFloat(ms) * parseFloat(con);
+            // alert(ans);
+            document.getElementById("answer").innerHTML = ans ;
+        }
+    </script>
+</body>
+</html>
