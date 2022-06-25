@@ -4,42 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Exercise 6</title>
     <style>
-        .calc {
-            width: 500px;
-            margin: auto;
-        }
+
     </style>
 </head>
-<body>
-        <form action="" class="calc">
-            <h1>Speed conversions</h1>
-            <label for="speed">Meter/second (m/s)</label><br>
-            <input type="number" name="speed" id="speed" placeholder="Enter Speed in m/s" size="40">
-            <select name="" id="conversions">
-                <option value="" selected disabled>Select Speed Unit</option>
-                <option value="3.6">Kilometer/hour (kph)</option>
-                <option value="2.236936">Mile/hour (mph)</option>
-                <option value="0.001">Kilometer/second (km/s)</option>
-                <option value="39.370079">Inch/second (in/s)</option>
-                <option value="0.0029386">Mach (Ma)</option>
-            </select>
-            <!-- <br><button onclick="convertspeed()">Convert</button> -->
-            
-        </form>
-        <br>
-        <div class="calc">
-            <button onclick="convertspeed()">Convert</button>
-            <h2 id="answer"></h2>
+<body class="bg-success">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+
+    <div class="container">
+        <h1 class="fst-italic text-white text-center mt-5">Speed conversions</h1>
+        <div>
+            <form action="#" class="form-control w-75 m-auto">    
+                <label for="speed" class="form=label fw-bold">Meter/second (m/s)</label><br>
+                <input type="number" name="speed" class="form-control" id="speed" placeholder="Enter Speed in m/s" size="40"><br>
+                <select name="" id="conversions" class="form-control">
+                    <option value="" selected disabled>Select Speed Unit</option>
+                    <option value="3.6">Kilometer/hour (kph)</option>
+                    <option value="2.236936">Mile/hour (mph)</option>
+                    <option value="0.001">Kilometer/second (km/s)</option>
+                    <option value="39.370079">Inch/second (in/s)</option>
+                    <option value="0.0029386">Mach (Ma)</option>
+                </select>
+            </form>
+            <div class="text-center mt-2">
+                <button onclick="convertspeed()" class="btn btn-info w-25 m-auto w-sm-50">Convert</button>
+                <h2 class="text-white mt-2" id="answer"></h2>
+            </div>
         </div>
+        <br>
+        <div class="">
+            
+        </div>
+    </div>    
+
+
     <script>
         function convertspeed() {
             let ms = document.getElementById("speed").value;
             let con = document.getElementById("conversions").value;
             let ans = parseFloat(ms) * parseFloat(con);
             // alert(ans);
-            document.getElementById("answer").innerHTML = ans ;
+            document.getElementById("answer").innerHTML = "<h2> Answer: " + ans;
         }
     </script>
 </body>
